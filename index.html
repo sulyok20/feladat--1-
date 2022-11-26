@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="my.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Filmek</h1>
+        <div class="row mb-3" style="max-width: 1000px !important;">
+            <div class="col-md-5 ">
+                <div class="input-group ">
+                    <!-- kereses -->
+                    <button class="btn btn-outline-info" type="button" id="Search" onclick="Search()"><i
+                            class="bi bi-search"></i></button>
+                    <input type="text" class="form-control" placeholder="Keressen egy film címére"
+                        aria-label="Example text with button addon" aria-describedby="button-addon1" id="SearchText">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <!-- szures -->
+
+                <select class="form-select md-3" aria-label="Default select example" onchange="categories()" id="kategoriak" >
+                    
+                </select> 
+            </div>
+            <!-- Create -->
+            <div class="col-md-2 mt-3 mt-md-0">
+                <button type="button" class="btn btn-primary" id="create-film">
+                    <i class="bi bi-plus-square"></i></button>
+            </div>
+        </div>
+        <!-- tablazat -->
+        <div class="row">
+            <div class="col-md-8">
+
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <!-- rendezes -->
+                            <th onclick="SortName()">Film neve</th>
+                            <th onclick="SortStudio()">Studió</th>
+                            <th onclick="SortYear()">Év</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+                            <td>Bosszuállók</td>
+                            <td>Marvel Studios</td>
+                            <td>2012</td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="deleteFilm()"><i
+                                        class="bi bi-trash3"></i></button>
+                                <button type="button" class="btn btn-success btn-sm " id="film-update"
+                                    onclick="updateFilm()"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card col-md-4" id="card">
+                
+                </div>
+            </div>
+            <!-- urlap -->
+
+            <div id="createTable" class="d-none">
+                <h2 class="d-none" id="title-new">Új Film</h2>
+                <h2 class="d-none" id="title-update">Film módosítás</h2>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" id="name-label" class="form-label">Film címe</label>
+                    <input type="text" class="form-control" id="name" placeholder="Film cím">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" id="studio-label" class="form-label">Studió</label>
+                    <input type="text" class="form-control" id="studio" placeholder="Studió">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" id="year-label" class="form-label">Kiadási év</label>
+                    <input type="number" class="form-control" id="year" placeholder="Kiadási év">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" id="img-label" class="form-label">Kép feltöltése</label>
+                    <input type="file" class="form-control" id="img" placeholder="Kép feltöltése" accept="/jpg, /png">
+                </div>
+                <div class="mb-3">
+                    <button type="button" class="btn btn-dark" id="film-save"><i class="bi bi-save"></i></button>
+                    <button type="button" class="btn btn-dark" id="film-cancel"><i class="bi bi-x-octagon"></i></button>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+    <script src="my.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

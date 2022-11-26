@@ -1,0 +1,9 @@
+.noborder{
+    border: 0px none white;
+}
+th{
+    cursor: pointer;
+}
+img{
+    margin-top: 15px;
+}
